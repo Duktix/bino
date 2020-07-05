@@ -1,0 +1,3 @@
+Sitemap:https://Frezit.github.io/bino//sitemap.xml
+User-agent:*
+Disallow:

@@ -5,18 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-			<title></title>
-		<meta name="keywords" content=""/>
-		<meta name="description" content=""/>
-		
+	    <title></title>
+<meta name="keywords" content=""/>
+<meta name="description" content=""/>
+<meta name="copyright"content="">
+<meta name="language" content="en_US">
+<meta name="robots" content="index,follow" />
+<meta name="author" content="first1 last1, jbora201@gmail.com">
+<meta name="rating" content="General">
+<meta name="revisit-after" content="7 days">
+<meta http-equiv="Expires" content="0">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="no-cache">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta name="og:title" content=""/>
+<meta name="og:image" content="/htmlhttps://Frezit.github.io/bino//uploads/2019/03/logo_772438505.png"/>
+<meta name="og:site_name" content=""/>
+<meta name="og:description" content=""/>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:description" content="">
+<meta name="twitter:title" content="">
+	
 	<script src="https://Frezit.github.io/bino//assets/js/jquery.min.js"></script>
-	<script src="https://Frezit.github.io/bino//assets/js/bootstrap.min.js"></script>
-	<link href="https://Frezit.github.io/bino//assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 	<link href="https://Frezit.github.io/bino//assets/css/ionicons.min.css" rel="stylesheet" type="text/css" />
 	<link href="https://Frezit.github.io/bino//assets/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 	<link href="https://Frezit.github.io/bino//assets/css/box.css" rel="stylesheet" type="text/css" />
-	<link href="https://Frezit.github.io/bino//assets/css/widgets.css" rel="stylesheet" type="text/css" />
-	<link href="https://Frezit.github.io/bino//assets/css/tipuesearch.css" rel="stylesheet" type="text/css" />
+  <link href="https://Frezit.github.io/bino//assets/css/animate.min.css" rel="stylesheet" type="text/css" />
+  
+      <link href="https://Frezit.github.io/bino//assets/css/tipuesearch.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
+  <script type="text/javascript" src="https://Frezit.github.io/bino//assets/js/jquery.magnific-popup.min.js"></script>
+  
+
 	<link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
 <link href="https://Frezit.github.io/bino//assets/theme/Default/css/style.css" rel="stylesheet">
 <link rel="icon" href="" type="image/png" sizes="16x16">
@@ -28,7 +52,15 @@
   	<link href="https://Frezit.github.io/bino//assets/theme.css" rel="stylesheet">
   
 	<style>
-		</style>
+	
+    body{
+    opacity: 0;
+    transition: opacity 1s;
+  }
+  body.pageloaded{
+    opacity: 1;
+  }
+  	</style>
 
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script> 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
@@ -50,18 +82,29 @@ $(document).ready(function(){
 	<script type="text/javascript" src="https://Frezit.github.io/bino//assets/js/jquery.validate.min.js"></script>
 	<script type="text/javascript" src="https://Frezit.github.io/bino//assets/js/jquery.twbsPagination.min.js"></script>
 
-		<link href="https://Frezit.github.io/bino//assets/css/aos.css" rel="stylesheet" type="text/css" />
-	<script src="https://Frezit.github.io/bino//assets/js/jquery.stellar.min.js"></script>
-	<script src="https://Frezit.github.io/bino//assets/js/instafeed.min.js"></script>
+	<link href="https://Frezit.github.io/bino//assets/css/aos.css" rel="stylesheet" type="text/css" />
+
+		<script src="https://Frezit.github.io/bino//assets/js/jquery.stellar.min.js"></script>
+
 	<script>
 	jQuery(document).ready(function(){
 		jQuery('.is-parallax').each(function(){
-            jQuery(this).attr("data-stellar-background-ratio", "0.5");
-			jQuery(this).attr("data-stellar-vertical-offset", '0');
+      jQuery(this).attr("data-stellar-background-ratio", jQuery(this).attr('data-background-ratio'));
+			jQuery(this).attr("data-stellar-vertical-offset", jQuery(this).attr('data-vertical-offset'));
 		})
 		jQuery(window).stellar({
 			horizontalScrolling: false
 		});
+    $('body').addClass('pageloaded');
+    $('[data-link]').each(function(){
+        if(jQuery(this).data('link')!=''){
+          var target = '_self';
+          if(jQuery(this).data('target')){
+            target = '_blank';
+          }
+          jQuery(this).append('<a href="'+jQuery(this).data('link')+'" target="'+target+'" class="box_link">&nbsp;</a>')
+        }
+    })
 	})
 	</script>
 	<style>
@@ -69,33 +112,37 @@ $(document).ready(function(){
 		display: none;
 	}
 	</style>
-		</head>
+	
+	
+
+  	        	</head>
 <body class="page-1 header1">
 	
 
 
 
-	<div class="navbar
+	<div class="navbar navbar-expand-md
 			transparent navbar-absolute-top
 	navbar-custom"
 role="navigation" >
-	<div class="container">
-				<div class="row">
-			<div class="col-md-12">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="sr-only">Toggle navigation</span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand logo" href="index.html">
+	<div class="is-container ">
+				<div class="row no-gutters align-items-center">
+			<div class="col-12 col-md-auto d-flex align-items-center justify-content-between align-items-center mx-auto">
+				<div class="navbar-header mr-auto">
+					<a class="navbar-brand logo" href="/">
 												<img src="/htmlhttps://Frezit.github.io/bino//uploads/2019/03/logo_772438505.png" class="img-responsive">
 											</a>
 				</div>
-				<div class="navbar-collapse collapse menustyle5" id="navbar-menu">
-					<ul class="nav navbar-nav navbar-right">
-						<li class="menu-item"><a class="nav-link " href="https://Frezit.github.io/bino//pages/1/preview" target="_self"> HOME</a><small></small></li><li class="menu-item"><a class="nav-link " href="https://Frezit.github.io/bino//pages/3/preview" target="_self"> ABOUT US</a><small></small></li><li class="menu-item"><a class="nav-link " href="#" target="_self"> PORTFOLIO</a><small></small></li><li class="menu-item"><a class="nav-link " href="#" target="_self"> PRICING</a><small></small></li><li class="menu-item"><a class="nav-link " href="#" target="_self"> TEAM</a><small></small></li><li class="menu-item"><a class="nav-link " href="#" target="_self"> BLOG</a><small></small></li><li class="menu-item"><a class="nav-link " href="https://Frezit.github.io/bino//pages/2/preview" target="_self"> CONTACT</a><small></small></li>
+				<button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar top"></span>
+					<span class="icon-bar middle"></span>
+					<span class="icon-bar bottom"></span>
+				</button>
+			</div>
+			<div class="col">
+				<div class="navbar-collapse collapse menustyle5" id="navbar-menu1">
+					<ul class="nav navbar-nav   ">
+						<li class="menu-item"><a class="nav-link " href="https://Frezit.github.io/bino//assets/pages/1/preview" target="_self"> HOME</a><small></small></li><li class="menu-item"><a class="nav-link " href="https://Frezit.github.io/bino//assets/pages/3/preview" target="_self"> ABOUT US</a><small></small></li><li class="menu-item"><a class="nav-link " href="#" target="_self"> PORTFOLIO</a><small></small></li><li class="menu-item"><a class="nav-link " href="#" target="_self"> PRICING</a><small></small></li><li class="menu-item"><a class="nav-link " href="#" target="_self"> TEAM</a><small></small></li><li class="menu-item"><a class="nav-link " href="#" target="_self"> BLOG</a><small></small></li><li class="menu-item"><a class="nav-link " href="https://Frezit.github.io/bino//assets/pages/2/preview" target="_self"> CONTACT</a><small></small></li>
 					</ul>
 				</div>
 			</div>
@@ -105,8 +152,8 @@ role="navigation" >
 
 
 
-<div class="is-wrapper">
-			<div class="is-section is-section-100 is-light-text is-box">
+<div id="is-wrapper" class="is-wrapper">
+	    		    <div class="is-section is-section-100 is-box">
 
         <div class="is-overlay">
             <div class="is-overlay-bg" style="background-image: url(&quot;/htmlhttps://Frezit.github.io/bino//uploads/2019/03/slider-min_1375583307.png&quot;);display: block;background-position: bottom,top;"></div>
@@ -118,14 +165,14 @@ role="navigation" >
 
             <div class="is-box-centered">
                 <div class="is-container is-builder container-fluid is-content-980 ui-droppable-hover" id="contentareaKE1rLbI" style=""><div class="row"><div class="row">
-				<div class="col-md-10 col-md-offset-1 center">
-                                <h3 class="tracking-in-expand"><b>Our Clients Are Our First Priority</b></h3>
-					<h1 class="tracking-in-expand"><b>WELCOME TO BINO</b></h1>
-		            <h4 class=".tracking-in-expand">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</h4>
-<div class="col-md-10 col-md-offset-1 center"><br></div><p><br></p>
-                       <a href="#" class="button_4653432 btn-one">Read More</a> &nbsp;
+				<div class="center col-md-10 col offset-md-1">
+                                <h3><b><span style="color: rgb(255, 255, 255);">Our Clients Are Our First Priority</span></b></h3>
+					<h1><b><span style="color: rgb(255, 255, 255);">WELCOME TO BINO</span></b></h1>
+		            <h4><span style="color: rgb(255, 255, 255);">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</span></h4>
+<div class="col-md-12 center"><br></div><p><br></p>
+                       <a href="" class="button button_12988289141">Read More</a> &nbsp;
 
-		            <a href="#" class="button_4653432 btn-one">Buy Now</a>
+		            <a href="" class="button button_12988289141">Buy Now</a>
 		        </div>
 			</div></div></div>
             </div>
@@ -151,7 +198,7 @@ role="navigation" >
 		    </div>
 		</div>
 
-<div class="widget-cat-list"><div class="row">
+<div class="widget-cat-list"><div class="row padding-b-3">
 					<div class="col-md-3 center wow flipInX">
 					   <a href="#">
 						<i class="fa fa-code" aria-hidden="true"></i>
@@ -163,7 +210,7 @@ role="navigation" >
 
 					<div class="col-md-3 center wow flipInX">
 					   <a href="#">
-						<i class="fa fa-heart-o" aria-hidden="true"></i>
+						<i class="icon ion-android-bicycle" aria-hidden="true"></i>
 						<h3><b>SEEK DESIGN</b></h3>
 						
 						</a>
@@ -172,7 +219,7 @@ role="navigation" >
 					
 					<div class="col-md-3 center  wow flipInX">
 					     <a href="#">
-						<i class="fa fa-lightbulb-o" aria-hidden="true"></i>
+						<i class="icon ion-android-apps" aria-hidden="true"></i>
 						<h3><b>CREATIVE IDEAS</b></h3>
 						</a>
 						<p>Lorem Ipsum is simply dummy text of the printing industry.</p>
@@ -193,7 +240,7 @@ role="navigation" >
     
     </div>
 
-<div class="is-section is-box is-bg-grey is-section-auto">
+<div class="is-section is-box is-bg-grey is-section-auto is-light-text">
 
         <div class="is-boxes">
 
@@ -201,12 +248,12 @@ role="navigation" >
                 <div class="is-container is-builder container-fluid is-content-1200" id="contentareanCrc9Wy" style=""><div class="widget-cat-default"><div class="row">
 <div class="col-md-12 text-center">
                     <h2><b style="color: rgb(0, 0, 0);">OUR WORK</b></h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>
+                    <p style="color: rgb(0, 0, 0);">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum</p>
                 </div>
 </div>
 <div class="row">
 <div class="col-md-12">
-                  <div class="widget simple_gallery_widget simple_gallery_widget_7">
+                  <div class="widget row flex-wrap simple_gallery_widget simple_gallery_widget_7">
 			<div class="grid col-sm-3">
 			<div class="row">
 			<figure class="" style="
@@ -215,12 +262,13 @@ role="navigation" >
 			color:rgba(255,255,255,1);
 			border-color:rgba(255,255,255,1);
 			">
-				<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image2_276263738.png');height:250px;overflow:hiiden;"></div>
-				<figcaption >
-											<h2>Lorem Ipsum</h2>
-																<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
-														</figcaption>	
-			</figure>
+							<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image2_276263738.png');height:250px;overflow:hiiden;"></div>
+								<figcaption class="  ">
+											<h2 class="">Lorem Ipsum</h2>
+																<div class=""><p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p></div>
+					
+				</figcaption>
+							</figure>
 			</div>
 		</div>
 			<div class="grid col-sm-3">
@@ -231,12 +279,13 @@ role="navigation" >
 			color:rgba(255,255,255,1);
 			border-color:rgba(255,255,255,1);
 			">
-				<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image3_200281509.png');height:250px;overflow:hiiden;"></div>
-				<figcaption >
-											<h2>Lorem Ipsum</h2>
-																<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
-														</figcaption>	
-			</figure>
+							<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image3_200281509.png');height:250px;overflow:hiiden;"></div>
+								<figcaption class="  ">
+											<h2 class="">Lorem Ipsum</h2>
+																<div class=""><p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p></div>
+					
+				</figcaption>
+							</figure>
 			</div>
 		</div>
 			<div class="grid col-sm-3">
@@ -247,12 +296,13 @@ role="navigation" >
 			color:rgba(255,255,255,1);
 			border-color:rgba(255,255,255,1);
 			">
-				<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image4_1601465854.png');height:250px;overflow:hiiden;"></div>
-				<figcaption >
-											<h2>Lorem Ipsum</h2>
-																<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
-														</figcaption>	
-			</figure>
+							<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image4_1601465854.png');height:250px;overflow:hiiden;"></div>
+								<figcaption class="  ">
+											<h2 class="">Lorem Ipsum</h2>
+																<div class=""><p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p></div>
+					
+				</figcaption>
+							</figure>
 			</div>
 		</div>
 			<div class="grid col-sm-3">
@@ -263,12 +313,13 @@ role="navigation" >
 			color:rgba(255,255,255,1);
 			border-color:rgba(255,255,255,1);
 			">
-				<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image5_1990796714.png');height:250px;overflow:hiiden;"></div>
-				<figcaption >
-											<h2>Lorem Ipsum</h2>
-																<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
-														</figcaption>	
-			</figure>
+							<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image5_1990796714.png');height:250px;overflow:hiiden;"></div>
+								<figcaption class="  ">
+											<h2 class="">Lorem Ipsum</h2>
+																<div class=""><p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p></div>
+					
+				</figcaption>
+							</figure>
 			</div>
 		</div>
 			<div class="grid col-sm-3">
@@ -279,12 +330,13 @@ role="navigation" >
 			color:rgba(255,255,255,1);
 			border-color:rgba(255,255,255,1);
 			">
-				<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image5_1990796714.png');height:250px;overflow:hiiden;"></div>
-				<figcaption >
-											<h2>Lorem Ipsum</h2>
-																<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
-														</figcaption>	
-			</figure>
+							<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image5_1990796714.png');height:250px;overflow:hiiden;"></div>
+								<figcaption class="  ">
+											<h2 class="">Lorem Ipsum</h2>
+																<div class=""><p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p></div>
+					
+				</figcaption>
+							</figure>
 			</div>
 		</div>
 			<div class="grid col-sm-3">
@@ -295,12 +347,13 @@ role="navigation" >
 			color:rgba(255,255,255,1);
 			border-color:rgba(255,255,255,1);
 			">
-				<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image3_200281509.png');height:250px;overflow:hiiden;"></div>
-				<figcaption >
-											<h2>Lorem Ipsum</h2>
-																<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
-														</figcaption>	
-			</figure>
+							<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image3_200281509.png');height:250px;overflow:hiiden;"></div>
+								<figcaption class="  ">
+											<h2 class="">Lorem Ipsum</h2>
+																<div class=""><p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p></div>
+					
+				</figcaption>
+							</figure>
 			</div>
 		</div>
 			<div class="grid col-sm-3">
@@ -311,12 +364,13 @@ role="navigation" >
 			color:rgba(255,255,255,1);
 			border-color:rgba(255,255,255,1);
 			">
-				<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image4_1601465854.png');height:250px;overflow:hiiden;"></div>
-				<figcaption >
-											<h2>Lorem Ipsum</h2>
-																<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
-														</figcaption>	
-			</figure>
+							<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image4_1601465854.png');height:250px;overflow:hiiden;"></div>
+								<figcaption class="  ">
+											<h2 class="">Lorem Ipsum</h2>
+																<div class=""><p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p></div>
+					
+				</figcaption>
+							</figure>
 			</div>
 		</div>
 			<div class="grid col-sm-3">
@@ -327,15 +381,38 @@ role="navigation" >
 			color:rgba(255,255,255,1);
 			border-color:rgba(255,255,255,1);
 			">
-				<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image2_276263738.png');height:250px;overflow:hiiden;"></div>
-				<figcaption >
-											<h2>Lorem Ipsum</h2>
-																<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p>
-														</figcaption>	
-			</figure>
+							<div class="img" style="background-image:url('/htmlhttps://Frezit.github.io/bino//uploads/2019/03/image2_276263738.png');height:250px;overflow:hiiden;"></div>
+								<figcaption class="  ">
+											<h2 class="">Lorem Ipsum</h2>
+																<div class=""><p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and</p></div>
+					
+				</figcaption>
+							</figure>
 			</div>
 		</div>
-			</div>
+	
+		<style>
+	.simple_gallery_widget_7 .grid figure:before {
+		content: "";
+		background: rgba(0,0,0,0.2);
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		z-index: 9;
+		-webkit-transition: all 0.3s ease-in-out;
+		-moz-transition: all 0.3s ease-in-out;
+		-o-transition: all 0.3s ease-in-out;
+		transition: all 0.3s ease-in-out;
+			}
+			.simple_gallery_widget_7 .grid figure:hover:before{
+			opacity:0;
+		}
+	
+	</style>
+	
+		</div>
 
                 </div>
 </div></div></div>
@@ -457,7 +534,7 @@ role="navigation" >
                             <li><i class="fa fa-times" aria-hidden="true"></i>Domains(1 Year Free) </li>
                                              
 					</ul>
-                            <a class="btn btn-warning">CHOOSE PLAN</a>
+                            <p style="text-align:center;display: block;"><a href="#" class="button_7624550 btn-warning">Choose Plan</a></p>
 				</div>
 			</div>
 
@@ -477,7 +554,7 @@ role="navigation" >
                             <li><i class="fa fa-times" aria-hidden="true"></i>Domains(1 Year Free) </li>
                                              
 					</ul>
-                    <a class="btn btn-warning">CHOOSE PLAN</a>
+                    <p style="text-align:center;display: block;"><a href="#" class="button_7624550 btn-warning">Choose Plan</a></p>
 					</div>
 			</div>
 			<div class="col-md-4 wow flipInX">
@@ -496,7 +573,7 @@ role="navigation" >
                             <li><i class="fa fa-check" aria-hidden="true"></i>Domains(1 Year Free) </li>
                                              
 					</ul>
-                    <a class="btn btn-warning">CHOOSE PLAN</a>
+                    <p style="text-align:center;display: block;"><a href="#" class="button_7624550 btn-warning">Choose Plan</a></p>
 					</div>
 			</div>
 			</div></div></div>
@@ -539,7 +616,7 @@ role="navigation" >
 		        </div>
 				<div class="col-md-3 center">
                          <a href="#" title="" target="_blank">       
-					<i class="fa fa-glass" aria-hidden="true"></i>
+					<i class="icon ion-android-archive" aria-hidden="true"></i>
 					<h3><b>178</b></h3>
 		                   <p>Campaigns</p>
                                
@@ -551,188 +628,265 @@ role="navigation" >
 
     </div>
 
-<div class="is-section is-box is-section-auto">
+<div class="is-section is-bg-grey is-section-auto">
 
         <div class="is-boxes">
 
-            <div class="is-box-centered">
-                <div class="is-container is-builder container-fluid is-content-1200" id="contentareaWYo0yXX" style=""><div class="row"><div class="row">
+            <div class="is-box is-bg-light is-dark-text is-align-center is-box-5">
 
-			<div class="col-md-12 center">
+                <div class="is-boxes">
 
-				<div class="display">
+                    <div class="is-overlay">
+                        <div class="is-overlay-bg" style="background-image: url(&quot;https://Frezit.github.io/bino//assets/images/samples/sample.jpg&quot;); display: none;"></div>
+                        <div class="is-overlay-color" style="display: none;"></div>
+                        <div class="is-overlay-content"></div>
+                    </div>
+
+                    <div class="is-box-centered">
+                        <div class="is-container is-builder is-content-640 container-fluid" id="contentareazcXFFPi"><div class="row"><div class="col-md-12">
+
+            		       <div class="display">
 
 					<h2><b style="color: rgb(0, 0, 0);">CLIENT WHO TRUST US</b></h2>
                     <p>It is a long established fact that a reader will be distracted by the readable content of </p>
 				</div>
 
-			</div>
 
-</div>
-<div class="row">
+                        </div></div></div>
+                    </div>
 
-			<div class="col-md-12 center">
+                </div>
 
-				<div class="widget image_scroller_widget image_scroller_widget_4">
-		<div class="owl-carousel owl-theme " id="owl_4">
+            </div>
+
+            <div class="is-box is-box-7">
+
+                <div class="is-boxes">
+
+                    <div class="is-box-centered">
+                        <div class="is-container is-builder container-fluid" id="contentareayAE47Jv"><div class="row"><div class="col-md-12">
+                           <div class="widget image_scroller_widget image_scroller_widget_4">
+		<div class="slick-carousel " id="slick_4">
 							<div class="item">
-					<div class="grid">
+					<div class="grid" style="margin:5px">
 						<figure class="" style="
 						background:rgba(0,0,0,1);
 						
 						color:rgba(255,255,255,1);
 						border-color:rgba(255,255,255,1);
 						">
-							<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client1_1025452237.png' />
-							<figcaption>
-																															</figcaption>	
-						</figure>
+														<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client1_1025452237.png' />
+														<figcaption class="  ">
+																	<h2 class="hidden">1</h2>
+																
+							</figcaption>
+													</figure>
 					</div>
 				</div>
 							<div class="item">
-					<div class="grid">
+					<div class="grid" style="margin:5px">
 						<figure class="" style="
 						background:rgba(0,0,0,1);
 						
 						color:rgba(255,255,255,1);
 						border-color:rgba(255,255,255,1);
 						">
-							<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client3_1948237142.png' />
-							<figcaption>
-																															</figcaption>	
-						</figure>
+														<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client3_1948237142.png' />
+														<figcaption class="  ">
+																	<h2 class="hidden">2</h2>
+																
+							</figcaption>
+													</figure>
 					</div>
 				</div>
 							<div class="item">
-					<div class="grid">
+					<div class="grid" style="margin:5px">
 						<figure class="" style="
 						background:rgba(0,0,0,1);
 						
 						color:rgba(255,255,255,1);
 						border-color:rgba(255,255,255,1);
 						">
-							<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client2_1854717309.png' />
-							<figcaption>
-																															</figcaption>	
-						</figure>
+														<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client2_1854717309.png' />
+														<figcaption class="  ">
+																	<h2 class="hidden">3</h2>
+																
+							</figcaption>
+													</figure>
 					</div>
 				</div>
 							<div class="item">
-					<div class="grid">
+					<div class="grid" style="margin:5px">
 						<figure class="" style="
 						background:rgba(0,0,0,1);
 						
 						color:rgba(255,255,255,1);
 						border-color:rgba(255,255,255,1);
 						">
-							<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client1_1025452237.png' />
-							<figcaption>
-																															</figcaption>	
-						</figure>
+														<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client1_1025452237.png' />
+														<figcaption class="  ">
+																	<h2 class="hidden">4</h2>
+																
+							</figcaption>
+													</figure>
 					</div>
 				</div>
 							<div class="item">
-					<div class="grid">
+					<div class="grid" style="margin:5px">
 						<figure class="" style="
 						background:rgba(0,0,0,1);
 						
 						color:rgba(255,255,255,1);
 						border-color:rgba(255,255,255,1);
 						">
-							<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client3_1948237142.png' />
-							<figcaption>
-																															</figcaption>	
-						</figure>
+														<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client3_1948237142.png' />
+														<figcaption class="  ">
+																	<h2 class="hidden">5</h2>
+																
+							</figcaption>
+													</figure>
 					</div>
 				</div>
 							<div class="item">
-					<div class="grid">
+					<div class="grid" style="margin:5px">
 						<figure class="" style="
 						background:rgba(0,0,0,1);
 						
 						color:rgba(255,255,255,1);
 						border-color:rgba(255,255,255,1);
 						">
-							<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client3_1948237142.png' />
-							<figcaption>
-																															</figcaption>	
-						</figure>
+														<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client3_1948237142.png' />
+														<figcaption class="  ">
+																	<h2 class="hidden">6</h2>
+																
+							</figcaption>
+													</figure>
 					</div>
 				</div>
 							<div class="item">
-					<div class="grid">
+					<div class="grid" style="margin:5px">
 						<figure class="" style="
 						background:rgba(0,0,0,1);
 						
 						color:rgba(255,255,255,1);
 						border-color:rgba(255,255,255,1);
 						">
-							<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client2_1854717309.png' />
-							<figcaption>
-																															</figcaption>	
-						</figure>
+														<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client2_1854717309.png' />
+														<figcaption class="  ">
+																	<h2 class="hidden">7</h2>
+																
+							</figcaption>
+													</figure>
 					</div>
 				</div>
 							<div class="item">
-					<div class="grid">
+					<div class="grid" style="margin:5px">
 						<figure class="" style="
 						background:rgba(0,0,0,1);
 						
 						color:rgba(255,255,255,1);
 						border-color:rgba(255,255,255,1);
 						">
-							<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client1_1025452237.png' />
-							<figcaption>
-																															</figcaption>	
-						</figure>
+														<img class="img" src='/htmlhttps://Frezit.github.io/bino//uploads/2019/03/client1_1025452237.png' />
+														<figcaption class="  ">
+																	<h2 class="hidden">8</h2>
+																
+							</figcaption>
+													</figure>
 					</div>
 				</div>
 					</div>
-				<script src="https://Frezit.github.io/bino//assets/js/owl.carousel.min.js"></script>
+
+		<div id="slickarrows_image_scroller_widget_4" class="slickarrows"></div>
+
+		<div id="slickdots_image_scroller_widget_4" class="slickdots"></div>
+
+
+				<style>
+		.image_scroller_widget_4 .grid figure:before {
+			content: "";
+			background: rgba(0,0,0,1);
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: 9;
+			-webkit-transition: all 0.3s ease-in-out;
+			-moz-transition: all 0.3s ease-in-out;
+			-o-transition: all 0.3s ease-in-out;
+			transition: all 0.3s ease-in-out;
+					}
+					.image_scroller_widget_4 .grid figure:hover:before{
+				opacity:0;
+			}
+		
+		</style>
+						
         <script type="text/javascript">
             jQuery(document).ready(function($) {
-                $('#owl_4').owlCarousel({
-				    loop:false,
-				    margin:5,
-				    nav:false,
-				    autoplay:false,
-					navText: ['<i class="fa fa-angle-left"></i>','<i class="fa fa-angle-right"></i>'],
-					dots : false,
-					rewind: false,
-					autoplayTimeout: 5000,
-					autoplayHoverPause: false,
-				    responsive:{
-				        0:{
-				            items:1
-				        },
-				        480:{
-				            items:2
-				        },
-				        700:{
-				            items:4
-				        },
-				        1000:{
-				            items:3
-				        },
-				        1100:{
-				            items:5
-				        }
-				    }
-				})
+								var slidesToShow = 5;
+								var slidesToScroll = 5;
+
+                $('#slick_4').slick({
+									appendArrows: $('#slickarrows_image_scroller_widget_4'),
+									appendDots: $('#slickdots_image_scroller_widget_4'),
+																		dots: false,
+																											infinite: true,
+																		speed: 300,
+									slidesToShow: slidesToShow,
+									slidesToScroll: slidesToScroll,
+																		arrows: false,
+																																				autoplay: true,
+																											adaptiveHeight: false,
+																																							autoplaySpeed: 5000,
+																															pauseOnHover: false,
+											pauseOnDotsHover: false,
+																																						centerMode: false,
+																																														speed: 300,
+																		focusOnSelect: true,
+																		responsive: [
+									 {
+										 breakpoint: 992,
+										 settings: {
+											 slidesToShow: slidesToShow,
+											 slidesToScroll: slidesToScroll,
+											 infinite: true,
+											 dots: true
+										 }
+									 },
+									 {
+										 breakpoint: 767,
+										 settings: {
+											 slidesToShow: 2,
+											 slidesToScroll: slidesToScroll,
+											 										 }
+									 },
+									 {
+										 breakpoint: 480,
+										 settings: {
+											 slidesToShow: 1,
+											 slidesToScroll: 1,
+											 										 }
+									 }
+									]
+																	})
             });
         </script>
 	</div>
+ 			
+                        </div></div></div>
+                    </div>
 
-			</div>
+                </div>
 
-</div></div></div>
             </div>
 
         </div>
-    
+
     </div>
 
-<div class="is-section is-light-text is-box is-section-60">
+<div class="is-section is-box is-section-60">
 
         <div class="is-overlay">
             <div class="is-overlay-bg is-scale-animated" style="background-image: url(&quot;/htmlhttps://Frezit.github.io/bino//uploads/2019/03/footer-top-bg_1835024905.png&quot;); display: block;"></div>
@@ -746,9 +900,9 @@ role="navigation" >
                 <div class="is-container is-builder container-fluid" id="contentareaDFYazV0" style=""><div class="widget-cat-info-title"><div class="row">
 				<div class="col-md-12 center">
 					 
-		             <h2>Let's Get Started Now.<strong> It's FREE!</strong></h2>
-                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</p>
-                            <a href="#" class="btn btn-default">START FREE TRAIL</a>
+		             <h2><span style="color: rgb(255, 255, 255);">Let's Get Started Now.<strong> It's FREE!</strong></span></h2>
+                          <p><span style="color: rgb(255, 255, 255);">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the</span></p>
+                            <a href="" class="button button_12988289141">Start Free Trail</a>	
 		        </div>
 			</div></div></div>
             </div>
@@ -756,7 +910,7 @@ role="navigation" >
         </div>
 
     </div>
-	</div>
+    	</div>
 
 
 
@@ -770,24 +924,29 @@ role="navigation" >
 
 
 
+<div class="is-wrapper is-footer">
+
+        <div class="is-section is-section-100 is-box is-bg-dark is-light-text">
+
+        <div class="is-boxes">
+
+            <div class="is-box-centered">
+                <div class="is-container is-builder container-fluid is-content-1200" id="contentareaYjOufb7" style="margin-top: 30px; margin-bottom: 30px;"><div class="row"><div class="col-md-6">
+    <p><span style="color: #ae4734;">Bin pvt ltd © All Rights Reserved</span></p>	
+</div>
+
+<div class="col-md-6 text-right">
+    <p><span style="color: #ae4734;">Website Designed By Frezit</span></p>
+</div></div></div>
+            </div>
+
+        </div>
+    
+    </div>
 
 
-
-
-        <div class="is-section footer" id="row_91284" style="clear:both;background-color:#000000;background-image:url();color:rgba(0,0,0,1)"><div class="container"><div class="row customrow"><div class="customcol col-sm-6" id="col_947269"><div class="boxelement"><div class="element"><p><div class="widget social_icons_widget social_icons_widget_3">
-	<ul class="social horizontal">
-									<li><a href="#" class="fa fa-facebook" target="_blank"></a></li>
-							<li><a href="#" class="fa fa-twitter" target="_blank"></a></li>
-							<li><a href="#" class="fa fa-google" target="_blank"></a></li>
-							<li><a href="#" class="fa fa-linkedin" target="_blank"></a></li>
-							<li><a href="#" class="fa fa-pinterest" target="_blank"></a></li>
-							<li><a href="#" class="fa fa-instagram" target="_blank"></a></li>
-						</ul>
-</div></p></div></div></div><div class="customcol col-sm-6" id="col_945371"><div class="boxelement"><div class="element"><p><span style="color: #ae4734;">Bin pvt ltd © All Rights Reserved</span></p></div></div></div></div></div></div>
-
-<!-- Back to top -->    
+<!-- Back to top -->
 <a href="#" class="back-to-top" id="back-to-top"> <i class="fa fa-angle-up"></i> </a>
-
 <script>
 jQuery(document).ready(function(){
 	jQuery('#slide-toggle').click(function(){
@@ -805,11 +964,11 @@ jQuery(document).ready(function(){
 			jQuery('#sliding').removeClass('on');
 		return false;
 	})
-})
+	})
 </script>
 
 
-<!-- Jquery easing -->                                                      
+<!-- Jquery easing -->
 <script type="text/javascript" src="https://Frezit.github.io/bino//assets/theme/Default/js/jquery.easing.1.3.min.js"></script>
 <!--sticky header-->
 <script type="text/javascript" src="https://Frezit.github.io/bino//assets/theme/Default/js/jquery.sticky.js"></script>
@@ -817,11 +976,71 @@ jQuery(document).ready(function(){
 <!--common script for all pages-->
 <script src="https://Frezit.github.io/bino//assets/theme/Default/js/jquery.app.js"></script>
 		
+</div>
+
 <script src="https://Frezit.github.io/bino//assets/js/aos.js"></script>
 <script>
 	AOS.init();
 </script>
+
 <script src="https://Frezit.github.io/bino//assets/js/box.js" type="text/javascript"></script>
+
+  
+        <script src="https://Frezit.github.io/bino//assets/js/progressbar.min.js"></script>
+  
+  
+  
+        <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+  
+  
+        <script type="text/javascript" src="https://Frezit.github.io/bino//assets/js/imagesloaded.pkgd.min.js"></script>
+      <script type="text/javascript" src="https://Frezit.github.io/bino//assets/js/isotope.pkgd.min.js"></script>
+      <script type="text/javascript" src="https://Frezit.github.io/bino//assets/js/packery-mode.pkgd.min.js"></script>
+  
+  
+  
+  
+
+
 	
+  
+<script src="https://Frezit.github.io/bino//assets/js/jquery.fittext.min.js"></script>
+<script>
+  $("h1, h2, h3, h4, h5, h6").each(function(){
+        $(this).attr('data-maxfont', $(this).css('font-size'));
+    })
+
+  $(document).ready(function() {
+   var url = window.location.href;
+   url = url.substring(0, (url.indexOf("#") == -1) ? url.length : url.indexOf("#"));
+   url = url.substring(0, (url.indexOf("?") == -1) ? url.length : url.indexOf("?"));
+   url = url.substr(url.lastIndexOf("/") + 1);
+   if(url == ''){
+   url = '/';
+   }
+   $('#navbar-menu li').each(function(){
+    var href = $(this).find('a').attr('href');
+    if(url == href){
+     var parentClass = $(this).parent('ul').attr('class');
+     if(parentClass == 'sub-menu'){
+      $(this).addClass('subactive');
+      $(this).parents('.menu li').addClass('active');
+     }else{
+      $(this).addClass('active');
+     }
+    }
+   });
+
+$("h1, h2, h3, h4, h5, h6").each(function(){
+  var thisele = $(this);
+  thisele.fitText(0.8, {
+     minFontSize: '16px',
+     maxFontSize: thisele.data('maxfont')
+   });
+})
+
+
+  });
+</script>
 </body>
 </html>
